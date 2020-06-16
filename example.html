@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Package IOTC</title>
+	<script type="text/javascript" src="http://18.221.22.148/iotc-js/iotc.js"></script>
+</head>
+<body>
+<h1 align="center">IOT Made simple</h1>
+<script type="text/javascript">
+
+	IOTC_connect("__APP_KEY__")
+	onConnect = ()=>{
+		console.log("Hello")
+		subscribe('bulb')
+		subscribe('ac')
+		send('bulb', 'Wo HOOO')
+	}
+
+	onReceive = (msg, deviceId)=>{
+		console.log(msg)
+		console.log(deviceId)
+	}
+</script>
+</body>
+</html>
